@@ -1,4 +1,5 @@
-FROM alpine
+FROM arm32v7/alpine
+
 ENV VERSION=4_8
 RUN wget https://github.com/squid-cache/squid/archive/SQUID_${VERSION}.tar.gz -O squid.tar.gz \
     && tar -xvf squid.tar.gz \
