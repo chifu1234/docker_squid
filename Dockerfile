@@ -17,8 +17,9 @@ RUN ./bootstrap.sh \
     && ./configure --prefix=/usr/local/squid \
     && make all \
     && make install 
+
 FROM alpine
 ENV VERSION=4.8
-COPY --from=0 /usr/local/squid
+COPY --from=0 /usr/local/squid /usr/local/squid
 WORKDIR /usr/local/squid
 CMD ['/usr/local/squid/sbin/squid']
