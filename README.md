@@ -8,6 +8,8 @@ Squid Web Proy Cache https://github.com/squid-cache/squid
 
 In order to run this container you'll need docker installed.
 
+docker pull chifu1234/squid
+
 * [Windows](https://docs.docker.com/windows/started)
 * [OS X](https://docs.docker.com/mac/started/)
 * [Linux](https://docs.docker.com/linux/started/)
