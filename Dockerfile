@@ -21,5 +21,8 @@ RUN ./bootstrap.sh \
 FROM alpine
 ENV VERSION=4.8
 COPY --from=0 /usr/local/squid /usr/local/squid
+COPY --from=0 /usr/lib /usr/lib
 WORKDIR /usr/local/squid
-CMD ['/usr/local/squid/sbin/squid']
+RUN touch /usr/local/squid/var/logs/access.log /usr/local/squid/var/logs/cache.log \
+    && chown 7 /usr/local/squid/var/logs/access.log /usr/local/squid/var/logs/cache.log
+CMD ["/usr/local/squid/sbin/squid"]
